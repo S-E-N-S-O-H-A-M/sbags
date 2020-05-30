@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <style>
+        * {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 10px;
+  background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  text-align: center;
+  background: #ddd;
+}
+
+.header h1 {
+  font-size: 50px;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  background-color: #f1f1f1;
+  padding-left: 20px;
+}
+.image{
+  width:auto;
+  height:auto;
+  border:5px dashes #f7a239;
+  padding=20px;
+}
+img{
+  width:100%;
+  height:100%;
+  }
+
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #000000;
+  margin-top: 20px;
+  color:#f1f1f1;
+}
+    </style>
+</head>
+<body>
+<div class="header"  style="background-image:url(https://sifu.unileversolutions.com/image/en-LK/recipe-topvisual/2/1260-709/authentic-chicken-biryani-50434132.jpg);background-repeat-none;background-size:1400px 300px">
+    <h1><i><a href="home" style="text-decoration:none;color: #000000">Flavours Of India</a></i></h1>
+  <p>Master the Art of Indian Cuisine</p>
+</div>
+
+<div class="topnav">
+
+  <a href="login" style="float:right">Logout</a>
+  <a href="login" style="float:right">Login</a>
+  <a href="register" style="float:right">Sign Up</a>
+</div>
+<br>
+<br>
+<form method="POST" action="register">
+     {% csrf_token %}
+    <div class="container" align="center">
+     <p>First Name:</p><input type="text" name="first_name" placeholder="First Name" required><br><br>
+     <p>Last Name</p><input type="text" name="last_name" placeholder="Last Name" required><br><br>
+     <p>User Name</p><input type="text" name="username" placeholder="UserName" required><br><br>
+     <p>Email</p><input type="text" name="email" placeholder="email" required><br><br>
+     <p>Password</p><input type="text" name="password1" placeholder="Password" required><br><br>
+     <p>Confirm Password</p><input type="text" name="password2" placeholder="Confirm Password" required><br><br>
+     <input type="submit">
+    </div>
+
+</form>
+<div align="center">
+If you already have an acoount,<a href="../astromania/login">login</a> instead {% for message in messages %}
+<p align=center>
+{{message}}
+</p>
+{% endfor %}
+</div>
+<div class="footer">
+  <h2>Flavours Of India</h2>
+  <p align="center">Copyright © 2020 Astromania, All Rights Reserved.  |  Web Design by Soham |<a href="#" style="text-decoration: none;color:#f1f1f1"> Privacy Policy</a></p>
+</div>
+</body>
+</html>
